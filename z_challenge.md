@@ -1,4 +1,4 @@
-# Challenge
+# Challenge #1:
 
 Set up React Router for our app. We should be able to do the following:
 
@@ -6,9 +6,7 @@ Set up React Router for our app. We should be able to do the following:
 
 2. Click on the shopping cart icon in the header to go to the "/cart" route, which should display the Cart component (found in the pages folder)
 
-Part 2:
-
-# Challenge
+# Challenge #2:
 
 Set up the Context for our app.
 
@@ -17,3 +15,26 @@ Set up the Context for our app.
 3. For now, just pass in an empty string "" as the context provider's value prop
 4. Export the custom Provider component and the full context object (so we can pass it to the useContext hook eventually)
 5. Set up your index.js to use the custom context Provider you created. (You can wrap it as a parent of the Router component)
+
+# Challenge #3:
+
+Add state to our context and pass it through the Provider
+
+1. Add state to hold the array of all photos our app gets from the API
+2. Pass the array of all photos through the value of the provider so it's available anywhere the app accesses the context
+
+# Challenge #4:
+
+Get the JSON data with the photos information from the API and save it to context state
+
+1. As soon as the ContextProvider component renders, get the JSON data from this url: 
+https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json
+
+2. Save the array of data that comes back to state.
+
+Review data fetching in React using `fetch`: 
+https://scrimba.com/p/p7P5Hd/c79Jask
+
+# Challenge #5:
+
+Using the data in context state, map over it in the Photos page and display the images.
