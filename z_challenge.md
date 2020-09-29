@@ -38,3 +38,45 @@ https://scrimba.com/p/p7P5Hd/c79Jask
 # Challenge #5:
 
 Using the data in context state, map over it in the Photos page and display the images.
+
+# Challenge #6:
+
+On the Image component, track the hover state
+
+1. Create state boolean for "hovered"
+2. When the mouse enters the Image's div, set "hovered" to true
+3. When the mouse leaves the Image's div, set "hovered" to false
+4. Log "hovered" to the console so you know it's changing successfully.
+
+# Challenge #7 
+
+Conditionally render the heart and plus icons when an Image component is being hovered on
+
+1. Icon to render for the heart:
+<i className="ri-heart-line favorite"></i>
+
+2. Icon to render for the plus:
+<i className="ri-add-circle-line cart"></i>
+
+# Challenge #8:
+
+Add ability to toggle an image's `isFavorited` property by clicking the heart icon (filled heart doesn't need to display on the image yet)
+
+1. Add a toggleFavorite method to context. It should take an `id` parameter and update the array of allPhotos by flipping the `isFavorited` property of the photo with the matching `id`
+    a. Have this function also console.log something so we know it's running correctly
+    b. Don't try to modify the individual image object only. Make sure to provide a whole new array to context with the one item with the matching `id` being changed.
+2. Make it so clicking the heart icon on any given image runs this method
+
+# Challenge #9:
+
+Make the image display the filled heart icon when it's already favorited
+
+Logic to follow:
+* If the image is favorited, display the filled heart icon always
+* Otherwise, if the image being hovered on, display the heart outline instead
+* If it isn't favorited OR hovered on, don't display anything
+
+Remember to make it so clicking the filled heart icon ALSO runs the toggleFavorite function!
+
+Filled heart icon:
+<i className="ri-heart-fill favorite"></i>
