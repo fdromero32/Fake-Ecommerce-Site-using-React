@@ -3,8 +3,8 @@ import { Context } from "../Context";
 import CartItem from "../components/CartItem";
 
 function Cart() {
-  const [buttonText, setButtonText] = useState("Place Order");
   const { cartItems, emptyCart } = useContext(Context);
+  const [buttonText, setButtonText] = useState("Add Items to your Cart");
 
   // Setting total cost assuming static value.
   const totalCost = 5.99 * cartItems.length;
@@ -20,9 +20,9 @@ function Cart() {
   function placeOrder() {
     setButtonText("Ordering...");
     setTimeout(() => {
-      alert("Order placed!")
-      setButtonText("Order placed!")
-      emptyCart()
+      alert("Order placed!");
+      setButtonText("Order placed!");
+      emptyCart();
     }, 3000);
   }
 
@@ -32,7 +32,11 @@ function Cart() {
       {cartItemElements}
       <p className="total-cost">Total: {totalCostDisplay} </p>
       <div className="order-button">
-        <button onClick={() => placeOrder()}>{buttonText}</button>
+        {cartItems.length > 0 ? (
+          <button onClick={() => placeOrder()}>{buttonText}</button>
+        ) : (
+          <p>You need to add things to your cart!</p>
+        )}
       </div>
     </main>
   );
